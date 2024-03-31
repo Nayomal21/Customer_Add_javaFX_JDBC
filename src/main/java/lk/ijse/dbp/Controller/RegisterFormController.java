@@ -1,6 +1,7 @@
 package lk.ijse.dbp.Controller;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import lk.ijse.dbp.AppInitializer;
 
@@ -33,7 +34,11 @@ public class RegisterFormController {
 
             int affected = pvsm.executeUpdate();
             System.out.println(affected);
+            if (affected > 0) {
+                new Alert(Alert.AlertType.CONFIRMATION,"Registration Successfully!").show();
+                AppInitializer.stage2.setScene(AppInitializer.scene);
 
+            }
 
         }
 
